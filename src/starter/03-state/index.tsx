@@ -1,11 +1,37 @@
 import { useState } from "react";
 
+type Link = {
+    id: number;
+    url: string;
+    text: string;
+};
+
+const navLinks: Link[] = [
+    {
+        id: 1,
+        url: "some url",
+        text: "some text",
+    },
+    {
+        id: 2,
+        url: "some url",
+        text: "some text",
+    },
+    {
+        id: 3,
+        url: "some url",
+        text: "some text",
+    },
+];
+
 function Component() {
     const [text, setText] = useState("shakeAndBake");
     const [number, setNumber] = useState<number>(1);
 
     // const [list, setList] = useState([]);
     const [list, setList] = useState<string[]>([]);
+
+    const [links, setLinks] = useState<Link[]>(navLinks);
 
     return (
         <div>
@@ -18,6 +44,14 @@ function Component() {
                     setText("hello");
                     setNumber(2);
                     setList(["hello", "world"]);
+                    setLinks([
+                        ...links,
+                        {
+                            id: 4,
+                            url: "hello",
+                            text: "hello",
+                        },
+                    ]);
                 }}
             >
                 click me
