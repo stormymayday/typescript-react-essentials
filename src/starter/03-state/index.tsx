@@ -4,6 +4,9 @@ function Component() {
     const [text, setText] = useState("shakeAndBake");
     const [number, setNumber] = useState<number>(1);
 
+    // const [list, setList] = useState([]);
+    const [list, setList] = useState<string[]>([]);
+
     return (
         <div>
             <h2 className="mb-1">State</h2>
@@ -14,6 +17,7 @@ function Component() {
                 onClick={() => {
                     setText("hello");
                     setNumber(2);
+                    setList(["hello", "world"]);
                 }}
             >
                 click me
