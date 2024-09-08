@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
+type Theme = "light" | "dark" | "system";
+
 const ThemeProviderContext = createContext<{ name: string } | undefined>(
     undefined
 );
